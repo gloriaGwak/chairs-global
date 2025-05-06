@@ -749,6 +749,12 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .m_none {
+    display: none;
+  }
+}
+
 .btn a, .btn button {
   display: inline-block;
   padding: 15px 24px 19px;

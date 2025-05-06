@@ -35,3 +35,9 @@ body {
         padding: 0 20px;
     }
 }
+
+.m_none{
+    @include media(false, mobile) {
+        display: none;
+    }
+}
