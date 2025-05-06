@@ -196,10 +196,6 @@
     }
     @include media(false, mobile) {
         .section_hero{
-            .inner{
-                // max-height: 100vh;
-                // padding-bottom: 47.777%;
-            }
             .txt_box{
                 width: calc(100% - 40px);
                 strong{
