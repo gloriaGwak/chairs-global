@@ -431,7 +431,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     right: -50%;
     top: 0;
     width: 50%;
-    height: 100dvh;
+    height: 100%;
     padding-top: 70px;
     background: #1A3B44;
   }
@@ -461,7 +461,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     position: static;
     overflow-y: auto;
     height: 100%;
-    padding-bottom: 65px;
+    padding-bottom: 74px;
     border-top: 1px solid rgba(241, 240, 233, 0.5);
   }
   header nav .main_menu li {
