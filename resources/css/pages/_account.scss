@@ -1,6 +1,5 @@
 .account{
     main{
-        padding-bottom: 128px;
         @include background('account/bg_account.jpg', center, no-repeat, cover);
     }
     .btn{
@@ -48,9 +47,6 @@
         }
     }
     @include media(false, tablet) {
-        main{
-            padding-bottom: 80px;
-        }
         .btn{
             margin-top: 35px;
         }
@@ -59,12 +55,12 @@
         }
         &.connect{
             main{
-                padding-bottom: 80px;
+                padding-bottom: 84px;
             }
         }
         &.login{
             main{
-                padding-bottom: 74px;
+                padding-bottom: 84px;
             }
             .white_box{
                 p{

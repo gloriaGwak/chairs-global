@@ -1194,7 +1194,6 @@ label textarea {
 }
 
 .account main {
-  padding-bottom: 128px;
   background: url("../../resources/images/account/bg_account.jpg") center no-repeat;
   background-size: cover;
 }
@@ -1240,9 +1239,6 @@ label textarea {
   }
 }
 @media (max-width: 1024px) {
-  .account main {
-    padding-bottom: 80px;
-  }
   .account .btn {
     margin-top: 35px;
   }
@@ -1250,10 +1246,10 @@ label textarea {
     margin-top: 24px;
   }
   .account.connect main {
-    padding-bottom: 80px;
+    padding-bottom: 84px;
   }
   .account.login main {
-    padding-bottom: 74px;
+    padding-bottom: 84px;
   }
   .account.login .white_box p {
     margin-top: 35px;
