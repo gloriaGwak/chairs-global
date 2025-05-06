@@ -39,10 +39,9 @@ header{
                 visibility: visible;
             }
         }
-
     }
     .dimmed{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -68,7 +67,6 @@ header{
         a{
             display: block;
         }
-        img{}
     }
     .btn_hamburger{
         display: none;
@@ -188,15 +186,6 @@ header{
             nav{
                 right: 0;
                 transition: right 0.3s;
-                .main_menu{
-                    li{
-                        &.btn_login{
-                            a{
-                                background: $orangeAccent;
-                            }
-                        }
-                    }
-                }
                 .sub_menu{
                     opacity: 0;
                     visibility: hidden;
@@ -217,7 +206,7 @@ header{
         .btn_hamburger{
             position: relative;
             display: block;
-            width: 40px;
+            width: 35px;
             height: 20px;
             span{
                 position: absolute;
@@ -225,12 +214,12 @@ header{
                 left: 0;
                 transform: translate(0,-50%);
                 width: 100%;
-                height: 1.5px;
+                height: 2px;
                 background: $white;
                 &:first-child{
                     top: 0;
                 }
-                &:last-child{
+                &:last-of-type{
                     top: 100%;
                 }
             }
@@ -246,17 +235,30 @@ header{
             .btn_close_nev{
                 display: block;
                 position: absolute;
-                top:13px;
-                right: 33px;
-                width: 40px;
-                height: 40px;
-                img{
+                transform: rotate(45deg);
+                top:20px;
+                right: 35px;
+                width: 30px;
+                height: 30px;
+                span{
+                    display: block;
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
                     width: 100%;
+                    height: 2px;
+                    transform: translateX(-50%);
+                    background: $white;
+                    &:first-child{
+                        transform: translateX(-50%) rotate(90deg);
+                    }
                 }
             }
             .main_menu{
+                position: static;
                 overflow-y: auto;
                 height: 100%;
+                padding-bottom: 65px;
                 li{
                     display: block;
                     padding:0;
@@ -291,6 +293,7 @@ header{
                     a{
                         display: block;
                         padding: 20px 40px;
+                        z-index: 1;
                         @include fontSize(24,5);
                         &:hover, &.active{
                             &::after{
@@ -302,24 +305,21 @@ header{
                         }
                     }
                     &.btn_login{
-                        // position: absolute;
-                        // width: 100%;
-                        // bottom: 0;
-                        // left: 0;
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
                         a{
                             padding: 20px 40px;
-                            background: $orangeAccent;
                             &::after{
                                 width: 36px;
                                 height: 36px;
                                 bottom: 50%;
-                                left: calc(100% - 40px);
-                                transform: translate(-100%,50%);
-                                @include background('common/icon_login.svg', center, no-repeat, contain);
+                                left: calc(100% - 34px);
                             }
                             &:hover{
                                 &::after{
-                                    left: calc(100% - 40px);
+                                    left: calc(100% - 34px);
                                 }
                             }
                         }
@@ -333,7 +333,7 @@ header{
                 margin-top: 0;
                 max-height: 0;
                 will-change: max-height;
-                transition: max-height 0.3s linear;
+                transition: max-height 0.3s linear, opacity 0.3s linear;
                 ul{
                     padding: 0 65px;
                     li{
@@ -356,70 +356,14 @@ header{
         }
     }
     @include media(false, mobile) {
-        // height: 65px;
-        // &.active{
-        //     &::after{
-        //         height: 0;
-        //     }
-        //     nav{
-        //         right: -0;
-        //     }
-        //     nav{
-        //         .main_menu{
-        //             li{
-        //                 &.btn_login{
-        //                     a{
-        //                         background: $orangeAccent;
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //         .sub_menu{
-        //             opacity: 0;
-        //             visibility: hidden;
-        //         }
-        //     }
-        // }
-        
-        // .header_inner{
-        //     z-index: 2;
-        //     padding: 12px 0;
-        // }
-        // .inner{
-        //     align-items: center;
-        // }
-        // .logo{
-        //     max-width: 150px;
-        // }
-        // .btn_hamburger{
-        //     position: relative;
-        //     display: block;
-        //     width: 40px;
-        //     height: 20px;
-        //     span{
-        //         position: absolute;
-        //         top: 50%;
-        //         left: 0;
-        //         transform: translate(0,-50%);
-        //         width: 100%;
-        //         height: 1.5px;
-        //         background: $white;
-        //         &:first-child{
-        //             top: 0;
-        //         }
-        //         &:last-child{
-        //             top: 100%;
-        //         }
-        //     }
-        // }
         nav{
             right: -100%;
             width: 80%;
             .btn_close_nev{
                 top:15px;
-                right: 11px;
-                width: 45px;
-                height: 45px;
+                right: 17px;
+                width: 30px;
+                height: 30px;
             }
             .main_menu{
                 li{
@@ -436,17 +380,16 @@ header{
                         a{
                             padding: 25px 20px;
                             &::after{
-                                left: calc(100% - 20px);
+                                left: calc(100% - 13px);
                             }
                             &:hover{
                                 &::after{
-                                    left: calc(100% - 20px);
+                                    left: calc(100% - 13px);
                                 }
                             }
                         }
                     }
                 }
-                
             }
             
             .sub_menu{

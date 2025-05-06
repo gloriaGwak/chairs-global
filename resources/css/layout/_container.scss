@@ -1,8 +1,3 @@
-// .page_container{
-//     position: relative;
-//     max-width: 1920px;
-//     margin: 0 auto;
-// }
 body {
     accent-color: $darkBlue;
     font-family: 'Alliance No.1', sans-serif;;
@@ -24,8 +19,6 @@ body {
             }
         }
     }
-    @include media(false, mobile) {
-    }
 }
 .inner{
     width: 100%;
@@ -40,60 +33,5 @@ body {
     @include media(false, mobile) {
         max-width: 100%;
         padding: 0 20px;
-    }
-}
-
-.pc_on{
-    display: block;
-    @include media(false, tablet) {
-        display: none;
-    }
-    @include media(false, mobile) {
-        display: none;
-    }
-}
-.tablet_on{
-    display: none;
-    @include media(false, tablet) {
-        display: block;
-    }
-    @include media(false, mobile) {
-        display: none;
-    }
-}
-.m_on{
-    display: none;
-    @include media(false, tablet) {
-        display: none;
-    }
-    @include media(false, mobile) {
-        display: block;
-    }
-}
-.pc_none{
-    display: none;
-    @include media(false, tablet) {
-        display: block;
-    }
-    @include media(false, mobile) {
-        display: block;
-    }
-}
-.tablet_none{
-    display: block;
-    @include media(false, tablet) {
-        display: none;
-    }
-    @include media(false, mobile) {
-        display: block;
-    }
-}
-.m_none{
-    display: block;
-    @include media(false, tablet) {
-        display: block;
-    }
-    @include media(false, mobile) {
-        display: none;
     }
 }

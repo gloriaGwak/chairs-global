@@ -53,9 +53,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-a:hover, a:active {
-    text-decoration: none;
-}
 legend {
     position: absolute;
     left: -9999px;
@@ -130,10 +127,6 @@ textarea::placeholder {
 }
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
-}
-.hide {
-    display: none !important;
-    visibility: hidden !important;
 }
 .visually-hidden {
     position: absolute;

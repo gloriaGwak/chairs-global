@@ -48,8 +48,6 @@
         }
     }
     @include media(false, tablet) {
-        // max-width: 100%;
-        // padding: 0 40px;
         main{
             padding-bottom: 80px;
         }
@@ -82,8 +80,6 @@
         }
     }
     @include media(false, mobile) {
-        // max-width: 100%;
-        // padding: 0 20px;
         .white_box{
             width: 100%;
             .btn{

@@ -25,50 +25,6 @@ $breakpoints: (
     }
 }
 
-// @mixin media($from: false, $until: false, $and: false, $media-type: all) {
-//     /// ❓ optional
-//     /// $from, $until : $breakpoints or number
-//     /// 예) @include media($from: "sm", $until: 768px, $and:"orientation: landscape")
-
-//     $min-width: 0;
-//     $max-width: 0;
-//     $query: "";
-
-//     @if $from {
-//         @if type-of($from) == number {
-//             $min-width: $from;
-//         } @else {
-//             $min-width: map-get($breakpoints, $from);
-//         }
-//     }
-//     @if $until {
-//         @if type-of($until) == number {
-//             $max-width: $until - 1px;
-//         } @else {
-//             $max-width: map-get($breakpoints, $until) - 1px;
-//         }
-//     }
-
-//     @if $min-width != 0 {
-//         $query: "#{$query} and (min-width: #{$min-width})";
-//     }
-//     @if $max-width != 0 {
-//         $query: "#{$query} and (max-width: #{$max-width})";
-//     }
-//     @if $and {
-//         $query: "#{$query} and (#{$and})";
-//     }
-
-//     @if ($media-type == "all" and $query != "") {
-//         $media-type: "";
-//         $query: str-slice(unquote($query), 6);
-//     }
-
-//     @media #{$media-type + $query} {
-//         @content;
-//     }
-// }
-
 /* font family */
 @mixin utileDisplay {
     font-family: $utileDisplay;
@@ -89,7 +45,7 @@ $breakpoints: (
     @if $letter-spacing == null {
         letter-spacing: 0;
     } @else {
-        // 디자인에서 %로 들어온 값을 em 단위로 변환
+        /* Converted from design: 150% → 1.5em for better scalability */
         $letter-spacing-em: ($letter-spacing / 100) * 1em;
         letter-spacing: $letter-spacing-em;
     }
@@ -101,30 +57,6 @@ $breakpoints: (
     }
 }
 
-/* font-size */
-@mixin fontStyle($font-size, $letter-spacing: null, $line-height: null) {
-    @if $letter-spacing == null {
-        letter-spacing: 0;
-    } @else {
-        letter-spacing: #{$letter-spacing / 1000}em;
-    }
-
-    @if $line-height == null {
-        line-height: 1;
-    } @else {
-        line-height: $line-height / $font-size;
-    }
-}
-
-/* vw Calculator */
-@function convert-vw($px-size, $browse-size) {
-    $px-size: $px-size * 1px;
-    $browse-size: $browse-size * 1px;
-    $resultVw: math.div($px-size, $browse-size) * 100;
-    $resultValue: math.floor($resultVw * 1000) / 1000;
-
-    @return (#{$resultValue}vw);
-}
 
 /* grid */
 @mixin grid($col, $gutter: $gutter, $defaultWidth: 1200, $gridCount: $gridCount, $gap: false) {

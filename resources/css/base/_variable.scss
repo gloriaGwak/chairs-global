@@ -1,35 +1,19 @@
 @charset "UTF-8";
 
-/*
-font-family: utile-display, sans-serif;
-font-style: normal;
-font-weight: 200;
-*/
-
 /* font */
 $utileDisplay: 'utile-display', sans-serif;
 
 /* base */
 $fontSize-default: 16;
 
-// color
+/* color */
 $darkBlue:#13353E;
 $orangeAccent:#D64000;
-
 $white: #ffffff;
 
-// size
-$maxSize: 1440px;
-$innerSize: 1200px;
-
-
-/*  The reference browser width for the VW converter(in mixin)  */
-$pcContentsSize: 1920;
-$tabletContentSize: 1536;
-$mobileContentSize: 750;
 
 $gridCount: 12;
 $gutter: 48;
 
-/* path */
+/* image path */
 $imgPath: "../../resources/images/";

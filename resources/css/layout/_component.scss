@@ -10,6 +10,10 @@
     &_orange{
         a, button{
             background: $orangeAccent;
+            transition: background 0.3s;
+            &:hover{
+                background: $darkBlue;
+            }
         }
     }
     &_icon{
@@ -49,8 +53,6 @@
             }
         }
     }
-    @include media(false, mobile) {
-    }
 }
 
 .title_area{
@@ -75,8 +77,6 @@
             @include fontSize(20,-1,30);
         }
     }
-    @include media(false, mobile) {
-    }
 }
 
 
@@ -100,8 +100,6 @@
         &_radio{
             margin-bottom: 16px;
         }
-    }
-    @include media(false, mobile) {
     }
 }
 label{
@@ -135,18 +133,6 @@ label{
     }
     @include media(false, tablet) {
         display: block;
-        span{
-        //     display: inline-block;
-        //     @include fontSize(16);
-        }
-        // input[type=text], input[type=password]{
-        //     display: block;
-        //     width: 100%;
-        //     height: 40px;
-        //     margin-top: 8px;
-        //     border: none;
-        //     border-bottom: 1px solid $darkBlue;
-        // }
         input[type=radio]{
             width: 20px;
             height: 20px;
@@ -154,7 +140,5 @@ label{
         textarea{
             height: 60px;
         }
-    }
-    @include media(false, mobile) {
     }
 }
