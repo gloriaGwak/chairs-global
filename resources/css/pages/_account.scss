@@ -1,5 +1,6 @@
 .account{
     main{
+        height: 100%;
         @include background('account/bg_account.jpg', center, no-repeat, cover);
     }
     .btn{

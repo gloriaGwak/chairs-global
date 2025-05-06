@@ -157,6 +157,8 @@
             }
         }
         .section_banner{
+            @include background('index/bg_banner.jpg', center, no-repeat, cover);
+            background-attachment:unset;
             h2{
                 width: 35%;
                 @include fontSize(38);

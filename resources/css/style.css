@@ -1125,6 +1125,11 @@ label textarea {
     letter-spacing: 0em;
     line-height: 1.0869565217;
   }
+  .index .section_banner {
+    background: url("../../resources/images/index/bg_banner.jpg") center no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+  }
   .index .section_banner h2 {
     width: 35%;
     font-size: 2.375rem;
@@ -1194,6 +1199,7 @@ label textarea {
 }
 
 .account main {
+  height: 100%;
   background: url("../../resources/images/account/bg_account.jpg") center no-repeat;
   background-size: cover;
 }
