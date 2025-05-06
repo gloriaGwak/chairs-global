@@ -1249,6 +1249,7 @@ label textarea {
     padding-bottom: 84px;
   }
   .account.login main {
+    min-height: calc(100vh - 189px);
     padding-bottom: 84px;
   }
   .account.login .white_box p {
@@ -1265,6 +1266,9 @@ label textarea {
   }
 }
 @media (max-width: 767px) {
+  .account.login main {
+    min-height: calc(100vh - 215px);
+  }
   .account .white_box {
     width: 100%;
   }
