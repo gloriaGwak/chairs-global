@@ -1100,6 +1100,14 @@ label textarea {
   word-break: keep-all;
   word-wrap: break-word;
 }
+@media (max-width: 1200px) {
+  .index .section_banner h2 {
+    width: 33%;
+  }
+  .index .section_banner p {
+    width: 63%;
+  }
+}
 @media (max-width: 1024px) {
   .index section:not(.section_hero) {
     padding: 80px 0;
@@ -1110,8 +1118,7 @@ label textarea {
     padding-bottom: 47.777%;
   }
   .index .section_hero .txt_box {
-    bottom: 64px;
-    left: 50%;
+    bottom: 120px;
     width: calc(100% - 80px);
     color: #ffffff;
     transform: translate(-50%, 0);
@@ -1131,13 +1138,11 @@ label textarea {
     background-attachment: unset;
   }
   .index .section_banner h2 {
-    width: 35%;
     font-size: 2.375rem;
     letter-spacing: 0;
     line-height: 1;
   }
   .index .section_banner p {
-    width: 60%;
     font-size: 1.25rem;
     /* Converted from design: 150% → 1.5em for better scalability */
     letter-spacing: -0.01em;
@@ -1169,8 +1174,6 @@ label textarea {
 }
 @media (max-width: 767px) {
   .index .section_hero .txt_box {
-    bottom: 64px;
-    left: 50%;
     width: calc(100% - 40px);
   }
   .index .section_hero .txt_box strong {
@@ -1203,11 +1206,11 @@ label textarea {
   background: url("../../resources/images/account/bg_account.jpg") center no-repeat;
   background-size: cover;
 }
+.account section {
+  margin-top: 24px;
+}
 .account .btn {
   margin-top: 35px;
-}
-.account .white_box {
-  margin-top: 24px;
 }
 .account.connect main {
   padding-bottom: 128px;
@@ -1245,20 +1248,17 @@ label textarea {
   }
 }
 @media (max-width: 1024px) {
-  .account main {
-    min-height: 100vh;
+  .account section {
+    margin-top: 40px;
   }
   .account .btn {
     margin-top: 35px;
   }
-  .account .white_box {
-    margin-top: 24px;
-  }
   .account.connect main {
-    padding-bottom: 84px;
+    padding-bottom: 120px;
   }
   .account.login main {
-    padding-bottom: 84px;
+    padding-bottom: 120px;
   }
   .account.login .white_box p {
     margin-top: 35px;

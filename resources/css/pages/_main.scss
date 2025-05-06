@@ -131,7 +131,16 @@
             }
         }
     }
-    
+    @include media(false, laptop) {
+        .section_banner{
+            h2{
+                width: 33%;
+            }
+            p{
+                width: 63%;
+            }
+        }
+    }
     @include media(false, tablet) {
         section:not(.section_hero){
             padding: 80px 0;
@@ -143,8 +152,7 @@
                 padding-bottom: 47.777%;
             }
             .txt_box{
-                bottom: 64px;
-                left: 50%;
+                bottom: 120px;
                 width: calc(100% - 80px);
                 color: $white;
                 transform: translate(-50%, 0);
@@ -160,11 +168,9 @@
             @include background('index/bg_banner.jpg', center, no-repeat, cover);
             background-attachment:unset;
             h2{
-                width: 35%;
                 @include fontSize(38);
             }
             p{
-                width: 60%;
                 @include fontSize(20,-1,30);
             }
         }
@@ -195,8 +201,6 @@
                 // padding-bottom: 47.777%;
             }
             .txt_box{
-                bottom: 64px;
-                left: 50%;
                 width: calc(100% - 40px);
                 strong{
                     margin-bottom: 40px;

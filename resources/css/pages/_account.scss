@@ -3,11 +3,11 @@
         height: 100%;
         @include background('account/bg_account.jpg', center, no-repeat, cover);
     }
+    section{
+        margin-top: 24px;
+    }
     .btn{
         margin-top: 35px;
-    }
-    .white_box{
-        margin-top: 24px;
     }
     &.connect{
         main{
@@ -48,23 +48,20 @@
         }
     }
     @include media(false, tablet) {
-        main{
-            min-height: 100vh;
+        section{
+            margin-top: 40px;
         }
         .btn{
             margin-top: 35px;
         }
-        .white_box{
-            margin-top: 24px;
-        }
         &.connect{
             main{
-                padding-bottom: 84px;
+                padding-bottom: 120px;
             }
         }
         &.login{
             main{
-                padding-bottom: 84px;
+                padding-bottom: 120px;
             }
             .white_box{
                 p{
