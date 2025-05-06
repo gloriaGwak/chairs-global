@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="icon" href="resources/images/common/favicon.ico">
+    
+    <title>Chairs Global</title>
+</head>
+<body>
+    <div class="wrap index">
+        <header>
+            <div class="dimmed"></div>
+            <div class="header_inner">
+                <div class="inner">
+                    <h1 class="logo">
+                        <a href="/index.html">
+                            <img src="resources/images/common/logo.svg" alt="CHAIRS GLOCAL">
+                        </a>
+                    </h1>
+                    <button type="button" class="btn_hamburger" data-btn="openMainMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav>
+                        <ul class="main_menu">
+                            <li data-active="false">
+                                <a href="javascript:void(0);" title="Open menu" data-btn="openSubMenu">About us</a>
+                                <div class="sub_menu">
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Who we are</a></li>
+                                        <li><a href="javascript:void(0);">What we do</a></li>
+                                        <li><a href="javascript:void(0);">Our people</a></li>
+                                        <li><a href="javascript:void(0);">Careers</a></li>
+                                    </ul>
+                                    <button type="button" class="btn_close_sub_menu" data-btn="closeSubMenu">
+                                        <img src="resources/images/common/icon_close.svg" alt="close">
+                                    </button>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0);">Blog</a></li>
+                            <li><a href="javascript:void(0);">Contact</a></li>
+                            <li class="btn_login"><a href="login.html">Chair Login</a></li>
+                        </ul>
+                        <button type="button" class="btn_close_nev" data-btn="closeMainMenu">
+                            <img src="resources/images/common/icon_close.svg" alt="close">
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="section_hero">
+                <div class="inner">
+                    <!-- Hidden headivg added to maintain semantic HTML structure and accessibility -->
+                    <h2 class="visually-hidden">Our Purpose</h2>
+                    <div class="txt_box">
+                        <strong>
+                            <span>Serving to connect, </span>
+                            <span>convene, support and advise </span>
+                            <span>those who lead boards</span>
+                        </strong>
+                        <div class="btn btn_orange">
+                            <a href="connect-now.html">Connect now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section_banner">
+                <div class="inner">
+                    <h2>What we offer</h2>
+                    <p>A dedicated community for board leaders to connect, learn, and access expert insights. Chairs Global is designed exclusively for corporate, institutional, and social impact chairs, providing a trusted space for peer-to-peer support, governance best practices, and strategic leadership resources.</p>
+                </div>
+            </section>
+            <section class="section_card" data-scroll='target'>
+                <div class="inner">
+                    <ul>
+                        <li>
+                            <img src="resources/images/index/img_card1.jpg" alt="">
+                            <div class="text_area">
+                                <h3>Impact</h3>
+                                <p>Trusted and proven in supporting and advising Chairs to ensure better boards, better organisations and better-connected economies</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="resources/images/index/img_card2.jpg" alt="">
+                            <div class="text_area">
+                                <h3>Community</h3>
+                                <p>A community that reinvests in furthering knowledge, broader support and education to the community of Chairs, whether public, private, social or not for profit</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="resources/images/index/img_card3.jpg" alt="">
+                            <div class="text_area">
+                                <h3>Education</h3>
+                                <p>Serving to connect, convene, and directly support those who lead boards. Capturing, creating and sharing collective knowledge and insights for the growth of all</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="inner">
+                <address>
+                    <div>
+                        <dl>
+                            <dt>Phone:</dt>
+                            <dd><a href="tel:+611300034034">1300 034 034</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>Email:</dt>
+                            <dd><a href="mailto:Info@chairsglobal.com">Info@chairsglobal.com</a></dd>
+                        </dl>
+                    </div>
+                </address>
+                <div>
+                    <span>© 2025 Chairs Global</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="resources/js/common.js"></script>
+    <script>
+        chairsGlobal.homepageMotion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@use "sass:math";
+
+/* Breakpoints for media query */
+$breakpoints: (
+    pc: 1200px,
+    tablet: 1024px,
+    mobile: 767px
+);
+
+/* Media query */
+@mixin media($min: false, $breakpoint-name) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+
+    @if $breakpoint-value == null {
+        @warn "Breakpoint '#{$breakpoint-name}' not found in \$breakpoints map.";
+    } @else if $min {
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+}
+
+// @mixin media($from: false, $until: false, $and: false, $media-type: all) {
+//     /// ❓ optional
+//     /// $from, $until : $breakpoints or number
+//     /// 예) @include media($from: "sm", $until: 768px, $and:"orientation: landscape")
+
+//     $min-width: 0;
+//     $max-width: 0;
+//     $query: "";
+
+//     @if $from {
+//         @if type-of($from) == number {
+//             $min-width: $from;
+//         } @else {
+//             $min-width: map-get($breakpoints, $from);
+//         }
+//     }
+//     @if $until {
+//         @if type-of($until) == number {
+//             $max-width: $until - 1px;
+//         } @else {
+//             $max-width: map-get($breakpoints, $until) - 1px;
+//         }
+//     }
+
+//     @if $min-width != 0 {
+//         $query: "#{$query} and (min-width: #{$min-width})";
+//     }
+//     @if $max-width != 0 {
+//         $query: "#{$query} and (max-width: #{$max-width})";
+//     }
+//     @if $and {
+//         $query: "#{$query} and (#{$and})";
+//     }
+
+//     @if ($media-type == "all" and $query != "") {
+//         $media-type: "";
+//         $query: str-slice(unquote($query), 6);
+//     }
+
+//     @media #{$media-type + $query} {
+//         @content;
+//     }
+// }
+
+/* font family */
+@mixin utileDisplay {
+    font-family: $utileDisplay;
+}
+
+
+/* font-size */
+@mixin fontSize($font-size: null, $letter-spacing: null, $line-height: null) {
+    // $font-size, $letter-spacing, $line-height : photoshop value
+    // font-size: $font-size * 1px;
+    @if font-size == null {
+        font-size: 1rem;
+    } @else {
+        $rem: ($font-size / $fontSize-default) * 1rem;
+        font-size: $rem;
+    }
+
+    @if $letter-spacing == null {
+        letter-spacing: 0;
+    } @else {
+        // 디자인에서 %로 들어온 값을 em 단위로 변환
+        $letter-spacing-em: ($letter-spacing / 100) * 1em;
+        letter-spacing: $letter-spacing-em;
+    }
+
+    @if $line-height == null {
+        line-height: 1;
+    } @else {
+        line-height: $line-height / $font-size;
+    }
+}
+
+/* font-size */
+@mixin fontStyle($font-size, $letter-spacing: null, $line-height: null) {
+    @if $letter-spacing == null {
+        letter-spacing: 0;
+    } @else {
+        letter-spacing: #{$letter-spacing / 1000}em;
+    }
+
+    @if $line-height == null {
+        line-height: 1;
+    } @else {
+        line-height: $line-height / $font-size;
+    }
+}
+
+/* vw Calculator */
+@function convert-vw($px-size, $browse-size) {
+    $px-size: $px-size * 1px;
+    $browse-size: $browse-size * 1px;
+    $resultVw: math.div($px-size, $browse-size) * 100;
+    $resultValue: math.floor($resultVw * 1000) / 1000;
+
+    @return (#{$resultValue}vw);
+}
+
+/* grid */
+@mixin grid($col, $gutter: $gutter, $defaultWidth: 1200, $gridCount: $gridCount, $gap: false) {
+    /* Calculate the width of 1 column */
+    $gutterCount: $gridCount - 1;
+    $gutterPercent: $gutter / $defaultWidth * 100;
+    $colBlockW: ($defaultWidth - ($gutter * $gutterCount)) / $gridCount;
+    $colBlockPer: $colBlockW / $defaultWidth * 100;
+
+    /* Calculate the width of columns */
+    $colW: ($colBlockPer * $col) + ($gutterPercent * ($col - 1)); // columns block * columns qty + width of gap
+    width: $colW * 1%;
+
+    /* Calculate margin-left for gap */
+    @if $gap == true {
+        $nthF: $gridCount / $col;
+        $nthL: ($gridCount / $col * 1) - 1;
+
+        margin-left: $gutterPercent * 1%;
+        &:nth-child(#{$nthF}n - #{$nthL}) {
+            margin-left: 0;
+        }
+    }
+}
+
+/* background */
+@mixin background($img, $bgp: null, $bgr: null, $bgz: null) {
+    /// ❗ Required
+    /// $img : direction and file name => 'common/logo.png'
+
+    /// ❓ Optional
+    /// When writing individually, the directive must be specified. => @include background('kr/common/logo.png', $bgr: no-repeat); 👈 "$bgr"
+    /// $bgp : position, $bgr : repeat, $bgz : size
+
+    @if $bgp == null {
+        // when there is not background position value
+        background-image: url("#{$imgPath}#{$img}");
+        background-repeat: $bgr;
+    } @else if $bgr == null {
+        // when there is not background repeat value
+        background-image: url("#{$imgPath}#{$img}");
+        background-position: $bgp;
+    } @else {
+        // when there are not position value and repeat value
+        background: url("#{$imgPath}#{$img}") $bgp $bgr;
+    }
+
+    // Return the background size value if it exists; omit it if it does not.
+    background-size: $bgz;
+}
+
+/* wordBreak */
+@mixin wordBreak {
+    word-break: keep-all;
+    word-wrap: break-word;
+}

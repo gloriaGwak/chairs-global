@@ -1,0 +1,96 @@
+.account{
+    main{
+        padding-bottom: 128px;
+        @include background('account/bg_account.jpg', center, no-repeat, cover);
+    }
+    .btn{
+        margin-top: 35px;
+    }
+    .white_box{
+        margin-top: 24px;
+    }
+    &.connect{
+        main{
+            padding-bottom: 128px;
+        }
+    }
+    &.login{
+        main{
+            padding-bottom: 74px;
+        }
+        .white_box{
+            p{
+                margin-top: 35px;
+                > a{
+                    @include fontSize(16,0,1);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+    .white_box{
+        width: 608px;
+        margin: 0 auto;
+        padding: 64px;
+        background: $white;
+        
+        @include media(false, tablet) {
+            padding: 30px;
+        }
+        @include media(false, mobile) {
+            width: 100%;
+            .btn{
+                a, button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include media(false, tablet) {
+        // max-width: 100%;
+        // padding: 0 40px;
+        main{
+            padding-bottom: 80px;
+        }
+        .btn{
+            margin-top: 35px;
+        }
+        .white_box{
+            margin-top: 24px;
+        }
+        &.connect{
+            main{
+                padding-bottom: 80px;
+            }
+        }
+        &.login{
+            main{
+                padding-bottom: 74px;
+            }
+            .white_box{
+                p{
+                    margin-top: 35px;
+                    > a{
+                        @include fontSize(16,0,1);
+                    }
+                }
+            }
+        }
+        .white_box{
+            padding: 30px;
+        }
+    }
+    @include media(false, mobile) {
+        // max-width: 100%;
+        // padding: 0 20px;
+        .white_box{
+            width: 100%;
+            .btn{
+                a, button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

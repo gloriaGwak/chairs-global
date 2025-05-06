@@ -1,0 +1,99 @@
+footer{
+    padding: 32px 0;
+    background: $darkBlue;
+    color: $white;
+    .inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    address{
+        @include grid(8);
+        font-size: 0;
+        &::before{
+            display: inline-block;
+            width: 49px;
+            height: 55px;
+            margin-right: 48px;
+            @include background('common/emblem.svg', center, no-repeat, 100%);
+            vertical-align: middle;
+            content: "";
+        }
+        > div{
+            display: inline-block;
+            width: calc(100% - 97px);
+            vertical-align: middle;
+        }
+        dl{
+            display: block;
+            margin-bottom: 12px;
+            @include fontSize(14,2);
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        dt{
+            display: inline-block;
+        }
+        dd{
+            display: inline-block;
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+    div{
+        @include grid(4);
+        span{
+            display: block;
+            @include fontSize(16);
+            text-align: right;
+        }
+    }
+    @include media(false, tablet) {
+        address{
+            @include grid(8);
+            &::before{
+                width: 40px;
+                height: 55px;
+                margin-right: 40px;
+            }
+            > div{
+                width: calc(100% - 80px);
+            }
+        }
+        div{
+            @include grid(4);
+            span{
+                display: block;
+                @include fontSize(16);
+                text-align: right;
+            }
+        }
+        
+    }
+    @include media(false, mobile) {
+        .inner{
+            flex-direction: column;
+        }
+        address{
+            @include grid(12);
+            &::before{
+            //     width: 40px;
+            //     height: 55px;
+                margin-right: 20px;
+            }
+            > div{
+                margin-top: 0;
+            }
+        }
+        div{
+            @include grid(12);
+            margin-top: 20px;
+            span{
+                // display: block;
+                // @include fontSize(16);
+            }
+        }
+    }
+}

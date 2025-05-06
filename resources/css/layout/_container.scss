@@ -1,0 +1,99 @@
+// .page_container{
+//     position: relative;
+//     max-width: 1920px;
+//     margin: 0 auto;
+// }
+body {
+    accent-color: $darkBlue;
+    font-family: 'Alliance No.1', sans-serif;;
+    color: $darkBlue;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-text-size-adjust: none;
+}
+.wrap{
+    &:not(.index){
+        main{
+            padding-top: 184px;
+        }
+    }
+    @include media(false, tablet) {
+        &:not(.index){
+            main{
+                padding-top: 84px;
+            }
+        }
+    }
+    @include media(false, mobile) {
+    }
+}
+.inner{
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 60px;
+    margin: 0 auto;
+    
+    @include media(false, tablet) {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+    @include media(false, mobile) {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.pc_on{
+    display: block;
+    @include media(false, tablet) {
+        display: none;
+    }
+    @include media(false, mobile) {
+        display: none;
+    }
+}
+.tablet_on{
+    display: none;
+    @include media(false, tablet) {
+        display: block;
+    }
+    @include media(false, mobile) {
+        display: none;
+    }
+}
+.m_on{
+    display: none;
+    @include media(false, tablet) {
+        display: none;
+    }
+    @include media(false, mobile) {
+        display: block;
+    }
+}
+.pc_none{
+    display: none;
+    @include media(false, tablet) {
+        display: block;
+    }
+    @include media(false, mobile) {
+        display: block;
+    }
+}
+.tablet_none{
+    display: block;
+    @include media(false, tablet) {
+        display: none;
+    }
+    @include media(false, mobile) {
+        display: block;
+    }
+}
+.m_none{
+    display: block;
+    @include media(false, tablet) {
+        display: block;
+    }
+    @include media(false, mobile) {
+        display: none;
+    }
+}

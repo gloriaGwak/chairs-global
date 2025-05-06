@@ -1,0 +1,469 @@
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 184px;
+    @include utileDisplay;
+    &::after{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #1A3B44;
+        transition: height 0.5s;
+        content: "";
+    }
+    &.active{
+        &::after{
+            height: 367px;
+        }
+        .dimmed{
+            opacity: 1;
+            visibility: visible;
+        }
+        nav{
+            .main_menu{
+                li{
+                    &.btn_login{
+                        a{
+                            background: $orangeAccent;
+                        }
+                    }
+                }
+            }
+            .sub_menu{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+    }
+    .dimmed{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.38);
+        transition: opacity 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .header_inner{
+        position: relative;
+        width:100%;
+        z-index: 2;
+        padding: 64px 0;
+    }
+    .inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .logo{
+        max-width: 208px;
+        a{
+            display: block;
+        }
+        img{}
+    }
+    .btn_hamburger{
+        display: none;
+    }
+    nav{
+        .btn_close_nev{
+            display: none;
+        }
+        .main_menu{
+            position: relative;
+            font-size: 0;
+            li{
+                display: inline-block;
+                vertical-align: text-top;
+                padding:19px 0;
+                &[data-active=true]{
+                    > a{
+                        &::after{
+                            width: calc(100% - 32px);
+                        }
+                    }
+                }
+                &.btn_login{
+                    a{
+                        padding: 12px 56px 16px 24px;
+                        background: $darkBlue;
+                        transition: background 0.3s;
+                        &::after{
+                            bottom: 50%;
+                            left: calc(100% - 24px);
+                            transform: translate(-100%,50%);
+                            width:24px;
+                            height: 24px;
+                            transition: left 0.3s;
+                            @include background('common/icon_login.svg', center, no-repeat, contain);
+                        }
+                        &:hover{
+                            background: $orangeAccent;
+                            &::after{
+                                left: calc(100% - 18px);
+                            }
+                        }
+                    }
+                }
+            }
+            a{
+                position:relative;
+                padding-right: 32px;
+                font-weight: 400;
+                @include fontSize(18,5);
+                color: $white;
+                &:hover, &.active{
+                    &::after{
+                        width: calc(100% - 32px);
+                    }
+                }
+                &::after{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background: $orangeAccent;
+                    transition: width 0.3s;
+                    content: "";
+                }
+            }
+        }
+        
+        .sub_menu{
+            position: absolute;
+            top:100%;
+            left: 0;
+            width: 100%;
+            margin-top: 32px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s 0.3s;
+            ul{
+                li{
+                    display: block;
+                    padding:0;
+                    margin-bottom:24px;
+                    &:last-of-type{
+                        margin-bottom: 0;
+                    }
+                }
+                a{
+                    padding: 0;
+                    &:hover{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .btn_close_sub_menu{
+                position: absolute;
+                top:0;
+                right: 0;
+                width: 24px;
+                height: 24px;
+                transition: transform 0.3s;
+                &:hover{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    
+    @include media(false, tablet) {
+        height: 70px;
+        &.active{
+            &::after{
+                height: 0;
+            }
+            nav{
+                right: 0;
+                transition: right 0.3s;
+                .main_menu{
+                    li{
+                        &.btn_login{
+                            a{
+                                background: $orangeAccent;
+                            }
+                        }
+                    }
+                }
+                .sub_menu{
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+        
+        .header_inner{
+            z-index: 2;
+            padding: 15px 0;
+        }
+        .inner{
+            align-items: center;
+        }
+        .logo{
+            max-width: 150px;
+        }
+        .btn_hamburger{
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 20px;
+            span{
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0,-50%);
+                width: 100%;
+                height: 1.5px;
+                background: $white;
+                &:first-child{
+                    top: 0;
+                }
+                &:last-child{
+                    top: 100%;
+                }
+            }
+        }
+        nav{
+            position: fixed;
+            right: -50%;
+            top: 0;
+            width: 50%;
+            height: 100vh;
+            padding-top: 70px;
+            background: #1A3B44;
+            .btn_close_nev{
+                display: block;
+                position: absolute;
+                top:13px;
+                right: 33px;
+                width: 40px;
+                height: 40px;
+                img{
+                    width: 100%;
+                }
+            }
+            .main_menu{
+                overflow-y: auto;
+                height: 100%;
+                li{
+                    display: block;
+                    padding:0;
+                    &[data-active]{
+                        position: relative;
+                        &::after{
+                            position: absolute;
+                            width: 22px;
+                            height: 22px;
+                            top: 22px;
+                            right: 40px;
+                            @include background('common/icon_arrow.svg', center, no-repeat, contain);
+                            transform: rotate(0);
+                            transition: transform 0.3s;
+                            content: "";
+                        }
+                    }
+                    &[data-active=true]{
+                        &::after{
+                            transform: rotate(180deg);
+                        }
+                        > a{
+                            &::after{
+                                width: 0;
+                            }
+                        }
+                        .sub_menu{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                    a{
+                        display: block;
+                        padding: 20px 40px;
+                        @include fontSize(24,5);
+                        &:hover, &.active{
+                            &::after{
+                                width: 0;
+                            }
+                        }
+                        &::after{
+                            height: 0;
+                        }
+                    }
+                    &.btn_login{
+                        // position: absolute;
+                        // width: 100%;
+                        // bottom: 0;
+                        // left: 0;
+                        a{
+                            padding: 20px 40px;
+                            background: $orangeAccent;
+                            &::after{
+                                width: 36px;
+                                height: 36px;
+                                bottom: 50%;
+                                left: calc(100% - 40px);
+                                transform: translate(-100%,50%);
+                                @include background('common/icon_login.svg', center, no-repeat, contain);
+                            }
+                            &:hover{
+                                &::after{
+                                    left: calc(100% - 40px);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+            .sub_menu{
+                position: static;
+                margin-top: 0;
+                max-height: 0;
+                will-change: max-height;
+                transition: max-height 0.3s linear;
+                ul{
+                    padding: 0 65px;
+                    li{
+                        margin-bottom:0;
+                        padding: 15px 0;
+                    }
+                    a{
+                        padding: 0;
+                        &:hover{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .btn_close_sub_menu{
+                    display: none;
+                }
+            }
+        }
+    }
+    @include media(false, mobile) {
+        // height: 65px;
+        // &.active{
+        //     &::after{
+        //         height: 0;
+        //     }
+        //     nav{
+        //         right: -0;
+        //     }
+        //     nav{
+        //         .main_menu{
+        //             li{
+        //                 &.btn_login{
+        //                     a{
+        //                         background: $orangeAccent;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //         .sub_menu{
+        //             opacity: 0;
+        //             visibility: hidden;
+        //         }
+        //     }
+        // }
+        
+        // .header_inner{
+        //     z-index: 2;
+        //     padding: 12px 0;
+        // }
+        // .inner{
+        //     align-items: center;
+        // }
+        // .logo{
+        //     max-width: 150px;
+        // }
+        // .btn_hamburger{
+        //     position: relative;
+        //     display: block;
+        //     width: 40px;
+        //     height: 20px;
+        //     span{
+        //         position: absolute;
+        //         top: 50%;
+        //         left: 0;
+        //         transform: translate(0,-50%);
+        //         width: 100%;
+        //         height: 1.5px;
+        //         background: $white;
+        //         &:first-child{
+        //             top: 0;
+        //         }
+        //         &:last-child{
+        //             top: 100%;
+        //         }
+        //     }
+        // }
+        nav{
+            right: -100%;
+            width: 80%;
+            .btn_close_nev{
+                top:15px;
+                right: 11px;
+                width: 45px;
+                height: 45px;
+            }
+            .main_menu{
+                li{
+                    &[data-active]{
+                        &::after{
+                            top: 27px;
+                            right: 20px;
+                        }
+                    }
+                    a{
+                        padding: 25px 20px;
+                    }
+                    &.btn_login{
+                        a{
+                            padding: 25px 20px;
+                            &::after{
+                                left: calc(100% - 20px);
+                            }
+                            &:hover{
+                                &::after{
+                                    left: calc(100% - 20px);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+            .sub_menu{
+                ul{
+                    a{
+                        padding: 0;
+                        &:hover{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .btn_close_sub_menu{
+                    display: none;
+                }
+            }
+        }
+    }
+}
