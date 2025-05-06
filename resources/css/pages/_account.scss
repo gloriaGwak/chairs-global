@@ -1,7 +1,6 @@
 .account{
     main{
         height: 100%;
-        min-height: 100vh;
         @include background('account/bg_account.jpg', center, no-repeat, cover);
     }
     .btn{
@@ -49,6 +48,9 @@
         }
     }
     @include media(false, tablet) {
+        main{
+            min-height: 100vh;
+        }
         .btn{
             margin-top: 35px;
         }
@@ -62,7 +64,6 @@
         }
         &.login{
             main{
-                min-height: calc(100vh - 189px);
                 padding-bottom: 84px;
             }
             .white_box{
@@ -79,11 +80,6 @@
         }
     }
     @include media(false, mobile) {
-        &.login{
-            main{
-                min-height: calc(100vh - 215px);
-            }
-        }
         .white_box{
             width: 100%;
             .btn{
