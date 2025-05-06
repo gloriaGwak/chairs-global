@@ -431,7 +431,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     right: -50%;
     top: 0;
     width: 50%;
-    height: 100vh;
+    height: 100dvh;
     padding-top: 70px;
     background: #1A3B44;
   }
@@ -462,6 +462,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     overflow-y: auto;
     height: 100%;
     padding-bottom: 65px;
+    border-top: 1px solid rgba(241, 240, 233, 0.5);
   }
   header nav .main_menu li {
     display: block;
@@ -1098,8 +1099,8 @@ label textarea {
     padding: 80px 0;
   }
   .index .section_hero .inner {
-    max-height: 100dvh;
-    min-height: 100dvh;
+    max-height: 100vh;
+    min-height: 100vh;
     padding-bottom: 47.777%;
   }
   .index .section_hero .txt_box {

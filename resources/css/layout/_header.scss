@@ -229,7 +229,7 @@ header{
             right: -50%;
             top: 0;
             width: 50%;
-            height: 100vh;
+            height: 100dvh;
             padding-top: 70px;
             background: #1A3B44;
             .btn_close_nev{
@@ -259,6 +259,7 @@ header{
                 overflow-y: auto;
                 height: 100%;
                 padding-bottom: 65px;
+                border-top: 1px solid rgba(241, 240, 233,0.5);
                 li{
                     display: block;
                     padding:0;
