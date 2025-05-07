@@ -382,7 +382,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
 }
 @media (max-width: 1024px) {
   header {
-    height: 70px;
+    height: 91px;
   }
   header.active::after {
     height: 0;
@@ -397,7 +397,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
   }
   header .header_inner {
     z-index: 2;
-    padding: 15px 0;
+    padding: 25px 0;
   }
   header .inner {
     align-items: center;
@@ -432,17 +432,17 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     top: 0;
     width: 50%;
     height: 100%;
-    padding-top: 70px;
+    padding-top: 91px;
     background: #1A3B44;
   }
   header nav .btn_close_nev {
     display: block;
     position: absolute;
     transform: rotate(45deg);
-    top: 20px;
+    top: 33px;
     right: 35px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   header nav .btn_close_nev span {
     display: block;
@@ -556,10 +556,7 @@ header nav .sub_menu .btn_close_sub_menu:hover {
     width: 80%;
   }
   header nav .btn_close_nev {
-    top: 15px;
     right: 17px;
-    width: 30px;
-    height: 30px;
   }
   header nav .main_menu li[data-active]::after {
     top: 27px;
