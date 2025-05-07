@@ -4,7 +4,6 @@
     }
     .section_hero{
         @include background('index/bg_hero.jpg', center, no-repeat, cover);
-        transition: background 0.3s;
         &.active{
             .txt_box{
                 strong{

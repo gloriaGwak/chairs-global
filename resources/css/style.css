@@ -878,9 +878,12 @@ label {
 label span {
   display: inline-block;
   font-size: 1rem;
-  letter-spacing: 0;
-  line-height: 1;
+  /* Converted from design: 150% → 1.5em for better scalability */
+  letter-spacing: 0.01em;
+  line-height: 1.25;
   vertical-align: middle;
+  word-break: keep-all;
+  word-wrap: break-word;
 }
 label input[type=text], label input[type=password] {
   display: block;
@@ -912,6 +915,10 @@ label textarea {
     width: 20px;
     height: 20px;
   }
+  label input[type=radio] + span {
+    width: calc(100% - 28px);
+    vertical-align: top;
+  }
   label textarea {
     height: 60px;
   }
@@ -924,7 +931,6 @@ label textarea {
 .index .section_hero {
   background: url("../../resources/images/index/bg_hero.jpg") center no-repeat;
   background-size: cover;
-  transition: background 0.3s;
 }
 .index .section_hero.active .txt_box strong span:nth-child(1) {
   -webkit-animation: txtMotion 0.4s linear 0.2s forwards;

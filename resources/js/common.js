@@ -1,6 +1,6 @@
 let chairsGlobal = {};
 let matchMediaSize = window.matchMedia("(max-width: 1024px)");
-let isMobile = matchMediaSize.matches; // 초기 상태 설정
+let isMobile = matchMediaSize.matches; 
 
 document.addEventListener("DOMContentLoaded",() => {
     chairsGlobal.init(); // Load initial function when page is loaded

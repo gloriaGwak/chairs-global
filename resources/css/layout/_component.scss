@@ -106,8 +106,9 @@ label{
     display: block;
     span{
         display: inline-block;
-        @include fontSize(16);
+        @include fontSize(16,1,20);
         vertical-align: middle;
+        @include wordBreak
     }
     input[type=text], input[type=password]{
         display: block;
@@ -136,6 +137,10 @@ label{
         input[type=radio]{
             width: 20px;
             height: 20px;
+            &+span{
+                width: calc(100% - 28px);
+                vertical-align: top;
+            }
         }
         textarea{
             height: 60px;
